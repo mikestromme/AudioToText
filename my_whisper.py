@@ -1,7 +1,7 @@
-import whisper
 import os
 from dotenv import load_dotenv
 import gradio as gr
+import whisper
 
 
 def transcribe_audio(audio_file):
@@ -9,7 +9,7 @@ def transcribe_audio(audio_file):
     result = model.transcribe(audio_file)
     output = result["text"]
     processed_text = "This is an example of processed text."
-    return processed_text
+    return processed_text, output
 
 def download_link(text):
     with open("processed_output.txt", "w") as f:
